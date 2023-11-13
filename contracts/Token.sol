@@ -49,6 +49,13 @@ contract Token {
         // transaction will revert.
         require(balances[msg.sender] >= amount, "Not enough tokens");
 
+	console.log(
+		"Transferring from %s to %s %s tokens",
+		msg.sender,
+		to,
+		amount
+	);
+
         // Transfer the amount.
         balances[msg.sender] -= amount;
         balances[to] += amount;
